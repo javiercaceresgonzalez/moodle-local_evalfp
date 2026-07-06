@@ -1,0 +1,100 @@
+/* Evidence linking matrix: Moodle/Bootstrap provide the base table style. */
+/* These rules handle the gradebook-like matrix behaviour. */
+
+.local-evalfp-matrix-wrap {
+    max-height: calc(100vh - 12rem);
+    overflow: auto;
+}
+
+.local-evalfp-matrix {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: initial !important;
+}
+
+.local-evalfp-matrix th,
+.local-evalfp-matrix td {
+    height: 3.25rem;
+    padding: .75rem .9rem;
+    vertical-align: middle;
+}
+
+.local-evalfp-matrix thead th {
+    height: 2.75rem;    
+}
+
+.local-evalfp-matrix .custom-select-sm {
+    min-width: 6.25rem;
+}
+
+.local-evalfp-matrix .form-check-input {
+    width: 1rem;
+    height: 1rem;
+}
+
+.local-evalfp-matrix-sticky-left {
+    left: 0;
+    position: sticky;
+}
+
+.local-evalfp-matrix-sticky-top-1 {
+    position: sticky;
+    top: 0;
+}
+
+.local-evalfp-matrix-z-left {
+    z-index: 2;
+}
+
+.local-evalfp-matrix-z-top {
+    z-index: 3;
+}
+
+.local-evalfp-matrix-z-top-left {
+    z-index: 5;
+}
+
+.local-evalfp-matrix-col-evidence {
+    min-width: 23rem;
+    max-width: 23rem;
+}
+
+.local-evalfp-matrix-col-evaluation {
+    min-width: 8.75rem;
+}
+
+.local-evalfp-matrix-col-control {
+    min-width: 4.25rem;
+}
+
+.local-evalfp-matrix-evidence-link {
+    max-width: 17rem;
+}
+
+.local-evalfp-matrix-indent-0 {
+    width: 0.00rem;
+}
+
+.local-evalfp-matrix-indent-1 {
+    width: 1.25rem;
+}
+
+.local-evalfp-matrix-indent-2 {
+    width: 2.50rem;
+}
+
+.local-evalfp-matrix-indent-3 {
+    width: 3.75rem;
+}
+
+.local-evalfp-matrix-indent-4 {
+    width: 5.00rem;
+}
+
+.local-evalfp-matrix-indent-5 {
+    width: 6.25rem;
+}
+
+.local-evalfp-matrix-indent-6 {
+    width: 7.50rem;
+}
