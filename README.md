@@ -1,6 +1,6 @@
 # EvalFP
 
-**EvalFP** is a Moodle local plugin for **Formación Profesional (FP)**, Spain's vocational education and training system.
+EvalFP is a Moodle local plugin for **Formación Profesional (FP)**, Spain's vocational education and training system.
 
 It adds a curriculum-based assessment layer to Moodle courses, connecting Moodle gradebook items with learning outcomes, assessment criteria, evaluation periods and evidence reports.
 
