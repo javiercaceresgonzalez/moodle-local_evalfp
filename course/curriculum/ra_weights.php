@@ -45,7 +45,7 @@ $PAGE->navbar->add(
     new moodle_url('/local/evalfp/course/index.php', ['courseid' => $courseid])
 );
 $PAGE->navbar->add(get_string('page_ra_weights_title', 'local_evalfp'));
-$PAGE->requires->js_call_amd('local_evalfp/weights', 'init');
+$PAGE->requires->js_call_amd('local_evalfp/ra_weights', 'init');
 
 // Load RA weights.
 $ras = local_evalfp_get_ras($courseid);

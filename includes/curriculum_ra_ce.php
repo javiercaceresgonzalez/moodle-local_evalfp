@@ -461,7 +461,9 @@ function local_evalfp_render_ce_weights_form(int $courseid, array $ras, array $c
             continue;
         }
 
-        echo html_writer::start_div('table-responsive border mb-4');
+        echo html_writer::start_div('table-responsive border mb-4', [
+            'data-local-evalfp-ce-weight-group' => '1',
+        ]);
         echo html_writer::start_tag('table', ['class' => 'generaltable table-light mb-0']);
         echo html_writer::start_tag('thead');
         echo html_writer::start_tag('tr');
@@ -492,7 +494,7 @@ function local_evalfp_render_ce_weights_form(int $courseid, array $ras, array $c
                 'size' => 5,
                 'inputmode' => 'decimal',
                 'aria-label' => get_string('form_ce_weight_for', 'local_evalfp', $displayce),
-                'data-local-evalfp-weight-input' => '1',
+                'data-local-evalfp-ce-weight-input' => '1',
             ]);
             $input .= html_writer::div(html_writer::span('%', 'input-group-text'), 'input-group-append');
             $input .= html_writer::end_div();
@@ -517,7 +519,7 @@ function local_evalfp_render_ce_weights_form(int $courseid, array $ras, array $c
         echo html_writer::start_tag('tr');
         echo html_writer::tag('th', get_string('total', 'grades'), ['class' => 'text-right align-middle']);
         echo html_writer::tag('th', html_writer::span(local_evalfp_format_percent($total), $totalclass, [
-            'data-local-evalfp-weight-total' => '1',
+            'data-local-evalfp-ce-weight-total' => '1',
         ]), ['class' => 'text-right align-middle']);
         echo html_writer::end_tag('tr');
         echo html_writer::end_tag('tfoot');
@@ -685,7 +687,7 @@ function local_evalfp_render_ra_weights_form(int $courseid, array $ras, array $e
             'size' => 5,
             'inputmode' => 'decimal',
             'aria-label' => get_string('form_ra_weight_for', 'local_evalfp', $displaycode),
-            'data-local-evalfp-weight-input' => '1',
+            'data-local-evalfp-ra-weight-input' => '1',
         ]);
         $input .= html_writer::div(html_writer::span('%', 'input-group-text'), 'input-group-append');
         $input .= html_writer::end_div();
@@ -710,7 +712,7 @@ function local_evalfp_render_ra_weights_form(int $courseid, array $ras, array $e
     echo html_writer::start_tag('tr');
     echo html_writer::tag('th', get_string('total', 'grades'), ['class' => 'text-right align-middle']);
     echo html_writer::tag('th', html_writer::span(rtrim(rtrim(sprintf('%.2f', $total), '0'), '.') . '%', $totalclass, [
-        'data-local-evalfp-weight-total' => '1',
+        'data-local-evalfp-ra-weight-total' => '1',
     ]), ['class' => 'text-right align-middle']);
     echo html_writer::end_tag('tr');
     echo html_writer::end_tag('tfoot');

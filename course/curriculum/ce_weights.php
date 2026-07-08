@@ -46,7 +46,7 @@ $PAGE->navbar->add(
     new moodle_url('/local/evalfp/course/index.php', ['courseid' => $courseid])
 );
 $PAGE->navbar->add(get_string('page_ce_weights_title', 'local_evalfp'));
-$PAGE->requires->js_call_amd('local_evalfp/weights', 'init');
+$PAGE->requires->js_call_amd('local_evalfp/ce_weights', 'init');
 
 // Load CE weights grouped by learning outcome.
 $curriculum = local_evalfp_get_ras_with_ce($courseid);

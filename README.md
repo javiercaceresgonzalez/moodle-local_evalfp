@@ -1,6 +1,6 @@
 # EvalFP
 
-EvalFP is a Moodle local plugin for **Formación Profesional (FP)**, Spain's vocational education and training system.
+**EvalFP** is a Moodle local plugin for **Formación Profesional (FP)**, Spain's vocational education and training system.
 
 It adds a curriculum-based assessment layer to Moodle courses, connecting Moodle gradebook items with learning outcomes, assessment criteria, evaluation periods and evidence reports.
 
@@ -16,13 +16,13 @@ In the English interface, EvalFP uses:
 
 Moodle already provides a powerful gradebook. Teachers can grade assignments, quizzes, manual items, categories and calculated items with a lot of flexibility.
 
-EvalFP does not replace that gradebook. It gives Moodle grades the additional curriculum meaning normally required in Formación Profesional:
+EvalFP does not replace that gradebook. It gives Moodle grades the additional curriculum meaning normally required in Formación Profesional based on:
 
-- which learning outcomes are defined in the course;
-- which assessment criteria belong to each learning outcome;
-- which Moodle gradebook items are used as assessment evidence;
-- which evaluation period each evidence item belongs to;
-- how assessment criteria contribute to each learning outcome;
+- which learning outcomes are defined in the course.
+- which assessment criteria belong to each learning outcome.
+- which Moodle gradebook items are used as assessment evidence.
+- which evaluation period each evidence item belongs to.
+- how assessment criteria contribute to each learning outcome.
 - how learning outcomes contribute to the evaluation grade.
 
 The guiding idea is simple:
@@ -32,14 +32,16 @@ Moodle gradebook -> activities, grade items and grades.
 EvalFP -> FP curriculum structure, evidence links, weights, periods and reports.
 ```
 
-This helps teachers avoid parallel spreadsheets and/or external tools while keeping the assessment process transparent inside Moodle.
+This helps teachers avoid parallel spreadsheets and/or external tools while keeping the assessment process transparent within Moodle.
+
+![Detailed student assessment report by learning outcome and assessment criterion](doc/images/assessment-individual.png)
 
 ## Main features
 
 * Define learning outcomes and assessment criteria per course.
 * Import RA/CE structures from an ODS template.
 * Configure learning outcome weights.
-* Configure assessment criterion weights inside each learning outcome.
+* Configure assessment criterion weights within every learning outcome.
 * Define partial, final and extraordinary evaluation periods.
 * Link Moodle gradebook items to evaluation periods and assessment criteria.
 * Review an assessment summary by learning outcome.
@@ -65,7 +67,7 @@ EvalFP is primarily designed for use in **Spanish**, as its natural context is F
 
 The plugin includes an **English** translation to make the project easier to understand, review and reuse by the wider Moodle community.
 
-Additional languages can be added following Moodle's standard language file system, by creating the corresponding language folder and strings inside the plugin's `lang` directory.
+Additional languages can be added following Moodle's standard language file system by creating the corresponding language folder and strings inside the plugin's `lang` directory.
 
 ## What EvalFP does not do
 
@@ -140,6 +142,9 @@ moodle/grade:viewall
 6. Review the course assessment summary.
 7. Review individual user reports and evidence reports.
 
+![Overview of student achievement by learning outcome](doc/images/assessment-general.png)
+
+
 ## Course navigation
 
 EvalFP is accessed from the course navigation, under the course **More** menu.
@@ -167,7 +172,10 @@ EvalFP can optionally display linked curriculum information inside supported Moo
 
 When enabled, the activity page displays the linked learning outcomes and assessment criteria as read-only curriculum context.
 
+![EvalFP learning outcomes and assessment criteria shown on a Moodle activity page](doc/images/activity-info.png)
+
 This does not change grading, does not modify the Moodle gradebook and does not allow editing evidence links from the activity view.
+
 
 ## Calculation model
 
@@ -235,14 +243,14 @@ See: [http://www.gnu.org/copyleft/gpl.html](http://www.gnu.org/copyleft/gpl.html
 
 Created and maintained by Javier Caceres Gonzalez ([javiercaceresgonzalez@gmail.com](mailto:javiercaceresgonzalez@gmail.com)).
 
-EvalFP was born from teaching practice in Spanish Formación Profesional, as a response to a real need identified through the daily use of Moodle: a clear, integrated and coherent way to connect course grades with learning outcomes, assessment criteria and evaluation periods.
+EvalFP stems from a personal experience in teaching vocational courses for the Spanish Formación Profesional system, as a response to a real need identified through the daily use of Moodle: a clear, integrated and coherent way to connect course grades with learning outcomes, assessment criteria and evaluation periods.
 
 For years, this need has led many teachers to complement Moodle with spreadsheets or external tools in order to organise, interpret and justify assessment according to the curriculum model used in vocational education. EvalFP aims to reduce that dependency, avoid duplicated work and make better use of the information already available in Moodle's gradebook.
 
 The project also has an important personal dimension. After many years working with Moodle, I felt the need and curiosity to understand its internal architecture more deeply, as well as the proper way to develop integrated solutions within the platform.
 
-EvalFP is a personal project developed over many months, in short periods of available time and without always having a continuous pace, due to professional and teaching responsibilities. It has been a constant learning process, involving documentation review, Moodle development standards, best practices and examples shared by the Moodle community.
+EvalFP is a personal project developed over a long time in short and discontinuous periods, due to professional and teaching responsibilities. It has been a constant learning process, involving documentation review, Moodle development standards, best practices and examples shared by the Moodle community.
 
-Throughout the development process, each decision has been questioned and reviewed with the aim of building a useful, maintainable tool that respects Moodle's philosophy. EvalFP does not try to replace the gradebook, but to complement it with a curriculum layer adapted to the reality of assessment in Spanish Formación Profesional.
+Throughout the development process of EvalFP, each decision has been questioned and reviewed with the aim of building a useful, maintainable tool that respects Moodle's philosophy. EvalFP does not try to replace the gradebook, but to complement it with a curriculum layer adapted to the reality of assessment in Spanish Formación Profesional.
 
-This plugin is shared as an open contribution to the educational community and the Moodle community, with the hope that it may be useful to other teachers, schools and departments facing similar needs.
+This plugin is shared as an open contribution to both the educational community and the Moodle community, with the hope that it may be useful to other teachers, schools and departments facing similar needs.
