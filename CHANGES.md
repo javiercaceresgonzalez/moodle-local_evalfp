@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2 - 2026-07-09
+
+### Changed
+
+- Enhanced the course index layout with the plugin icon and improved group separation.
+
 ## 1.0.1 - 2026-07-09
 
 ### Added

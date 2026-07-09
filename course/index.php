@@ -44,13 +44,24 @@ $PAGE->navigation->override_active_url(new moodle_url('/local/evalfp/course/inde
 // Output.
 echo $OUTPUT->header();
 echo html_writer::start_tag('main', ['class' => 'container-fluid mt-4']);
-echo html_writer::tag('h2', get_string('pluginname', 'local_evalfp'), ['class' => 'mb-4']);
+
+echo html_writer::start_div('d-flex align-items-center mb-4');
+echo html_writer::empty_tag('img', [
+    'src' => $OUTPUT->image_url('icon', 'local_evalfp'),
+    'alt' => '',
+    'width' => 32,
+    'height' => 32,
+    'class' => 'mr-3',
+]);
+echo html_writer::tag('h2', get_string('pluginname', 'local_evalfp'), ['class' => 'mb-0']);
+echo html_writer::end_div();
 
 // Render grouped plugin links.
-foreach (local_evalfp_get_course_menu_items($courseid) as $group) {
-    // Add a horizontal rule between groups, except after the last group.
-    if ($group !== end($group)) {
-        echo html_writer::empty_tag('hr');
+$menugroups = local_evalfp_get_course_menu_items($courseid);
+foreach ($menugroups as $groupindex => $group) {
+    // Add a horizontal rule between groups, except before the first group.
+    if ($groupindex > 0) {
+        echo html_writer::empty_tag('hr', ['class' => 'my-4']);
     }
     // Render the group heading and items.
     echo html_writer::start_div('row');
