@@ -16,7 +16,7 @@ In the English interface, EvalFP uses:
 
 Moodle already provides a powerful gradebook. Teachers can grade assignments, quizzes, manual items, categories and calculated items with a lot of flexibility.
 
-EvalFP does not replace that gradebook. It gives Moodle grades the additional curriculum meaning normally required in Formación Profesional based on:
+**EvalFP does not replace that gradebook**. It gives Moodle grades the additional curriculum meaning normally required in Formación Profesional based on:
 
 - which learning outcomes are defined in the course.
 - which assessment criteria belong to each learning outcome.
