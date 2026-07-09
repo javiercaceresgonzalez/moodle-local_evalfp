@@ -44,6 +44,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: pgsql, zip, gd, intl, mbstring, xml, soap, curl
+          ini-values: max_input_vars=5000, memory_limit=512M
           coverage: none
 
       - name: Initialise moodle-plugin-ci
