@@ -149,6 +149,8 @@ moodle/grade:viewall
 
 EvalFP is accessed from the course navigation, under the course **More** menu.
 
+![EvalFP main interface](doc/images/evalfp-main.png)
+
 The plugin is organised into four main areas:
 
 * **Assessment**: assessment summary and individual user reports.
