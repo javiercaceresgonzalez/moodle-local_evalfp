@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_evalfp';
-$plugin->version = 2026070901;
+$plugin->version = 2026071000;
 $plugin->requires = 2024100700; // Requires Moodle 4.5 or later.
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release = '1.0.2';
+$plugin->release = '1.0.3';
