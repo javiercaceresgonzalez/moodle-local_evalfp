@@ -207,7 +207,7 @@ function local_evalfp_render_course_tertiary_navigation(
 /**
  * Renders a Moodle action menu.
  *
- * @param array<int, array<string, mixed>> $actions Action definitions with label, URL, icon and optional attributes.
+ * @param array $actions Action definitions with label, URL, icon and optional attributes.
  * @return string Rendered action menu HTML.
  */
 function local_evalfp_render_course_action_menu(array $actions): string {

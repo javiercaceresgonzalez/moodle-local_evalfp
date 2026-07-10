@@ -64,9 +64,9 @@ class ra extends \moodleform {
     /**
      * Validates unique RA code within the course.
      *
-     * @param array<string, mixed> $data Submitted data.
-     * @param array<string, mixed> $files Submitted files.
-     * @return array<string, string> Validation errors indexed by form element name.
+     * @param array $data Submitted data.
+     * @param array $files Submitted files.
+     * @return array Validation errors indexed by form element name.
      */
     public function validation($data, $files) {
         global $DB;

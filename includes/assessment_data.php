@@ -67,8 +67,8 @@ function local_evalfp_get_assessment_evaluation_options(int $courseid, int $eval
  * Raw Moodle grades are converted to percentages using each grade item's
  * maximum grade. Missing grades are intentionally omitted.
  *
- * @param array<int, stdClass> $users Users indexed by user ID.
- * @param array<int, stdClass> $evidences Evidence grade items indexed by grade item ID.
+ * @param array $users Users indexed by user ID.
+ * @param array $evidences Evidence grade items indexed by grade item ID.
  * @return array<int, array<int, float>> Percentages indexed by user ID and grade item ID.
  */
 function local_evalfp_get_assessment_grade_percentages(array $users, array $evidences): array {
@@ -109,7 +109,7 @@ function local_evalfp_get_assessment_grade_percentages(array $users, array $evid
  *
  * @param int $courseid Course ID.
  * @param int $selectedevaluationid Selected evaluation ID.
- * @param array<int, stdClass> $evaluationsbyid Course evaluations indexed by ID.
+ * @param array $evaluationsbyid Course evaluations indexed by ID.
  * @return array<string, mixed> Calculation data keyed by responsibility.
  */
 function local_evalfp_get_assessment_calculation_data(int $courseid, int $selectedevaluationid, array $evaluationsbyid): array {
@@ -157,8 +157,8 @@ function local_evalfp_get_assessment_calculation_data(int $courseid, int $select
  * selected evaluation period. Each RA is then calculated as the weighted
  * average of its CE with positive weight and available evidence.
  *
- * @param array<int, stdClass> $users Users indexed by user ID.
- * @param array<string, mixed> $calculationdata Calculation data returned by local_evalfp_get_assessment_calculation_data().
+ * @param array $users Users indexed by user ID.
+ * @param array $calculationdata Calculation data returned by local_evalfp_get_assessment_calculation_data().
  * @return array<int, array<int, float|null>> RA achievement indexed by user ID and RA ID.
  */
 function local_evalfp_calculate_assessment_ra_results(array $users, array $calculationdata): array {
@@ -234,9 +234,9 @@ function local_evalfp_calculate_assessment_ra_results(array $users, array $calcu
  * Only RA values with data contribute to the total. The configured RA weights
  * are re-normalised over the available RA set for the selected evaluation.
  *
- * @param array<int, stdClass> $users Users indexed by user ID.
- * @param array<int, stdClass> $ras Learning outcomes with their course weights.
- * @param array<int, array<int, float|null>> $raresults RA achievement indexed by user ID and RA ID.
+ * @param array $users Users indexed by user ID.
+ * @param array $ras Learning outcomes with their course weights.
+ * @param array $raresults RA achievement indexed by user ID and RA ID.
  * @return array<int, float|null> Weighted totals indexed by user ID.
  */
 function local_evalfp_calculate_assessment_weighted_totals(array $users, array $ras, array $raresults): array {

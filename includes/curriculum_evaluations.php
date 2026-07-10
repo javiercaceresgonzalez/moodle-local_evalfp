@@ -150,7 +150,7 @@ function local_evalfp_format_evaluation_option(
  * Full labels include the evaluation code and dates when they help the user
  * identify the selected period. Short labels keep evidence matrices readable.
  *
- * @param array<int, stdClass> $evaluations Evaluation records indexed by ID.
+ * @param array $evaluations Evaluation records indexed by ID.
  * @param string $mode Label mode.
  * @return array<int, string> Select options keyed by evaluation ID.
  */
@@ -175,8 +175,8 @@ function local_evalfp_get_evaluation_select_options(
  *
  * @param int $gradeitemid Grade item ID.
  * @param int $selectedevalid Selected course evaluation ID.
- * @param array<int, int> $evaluationsbyevidence Evidence assignments indexed by grade item ID.
- * @param array<int, stdClass> $evaluationsbyid Course evaluations indexed by ID.
+ * @param array $evaluationsbyevidence Evidence assignments indexed by grade item ID.
+ * @param array $evaluationsbyid Course evaluations indexed by ID.
  * @return bool
  */
 function local_evalfp_is_evidence_in_evaluation(
@@ -340,7 +340,7 @@ function local_evalfp_get_evaluation_type_badge_class(int $type): string {
  * Renders the course evaluation list.
  *
  * @param int $courseid Course ID.
- * @param array<int, stdClass> $evaluations Course evaluations.
+ * @param array $evaluations Course evaluations.
  * @return string
  */
 function local_evalfp_render_evaluations_table(int $courseid, array $evaluations): string {

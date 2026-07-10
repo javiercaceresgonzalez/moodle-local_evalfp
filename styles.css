@@ -20,7 +20,7 @@
 }
 
 .local-evalfp-matrix thead th {
-    height: 2.75rem;    
+    height: 2.75rem;
 }
 
 .local-evalfp-matrix .custom-select-sm {
@@ -72,7 +72,7 @@
 }
 
 .local-evalfp-matrix-indent-0 {
-    width: 0.00rem;
+    width: 0;
 }
 
 .local-evalfp-matrix-indent-1 {
@@ -80,7 +80,7 @@
 }
 
 .local-evalfp-matrix-indent-2 {
-    width: 2.50rem;
+    width: 2.5rem;
 }
 
 .local-evalfp-matrix-indent-3 {
@@ -88,7 +88,7 @@
 }
 
 .local-evalfp-matrix-indent-4 {
-    width: 5.00rem;
+    width: 5rem;
 }
 
 .local-evalfp-matrix-indent-5 {
@@ -96,5 +96,5 @@
 }
 
 .local-evalfp-matrix-indent-6 {
-    width: 7.50rem;
+    width: 7.5rem;
 }

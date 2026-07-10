@@ -275,8 +275,8 @@ function local_evalfp_get_ras(int $courseid): array {
 /**
  * Parses submitted learning outcome weights.
  *
- * @param array<int, stdClass> $ras RA records indexed by RA ID.
- * @param array<string, mixed> $submitted Submitted form data.
+ * @param array $ras RA records indexed by RA ID.
+ * @param array $submitted Submitted form data.
  * @return array{weights: array<int, float>, errors: array<int, string>} Parsed weights and validation errors.
  */
 function local_evalfp_parse_ra_weights(array $ras, array $submitted): array {
@@ -331,8 +331,8 @@ function local_evalfp_save_ra_weights(array $ras, array $weights): void {
 /**
  * Applies submitted weights to learning outcome records for preview.
  *
- * @param array<int, stdClass> $ras RA records indexed by RA ID.
- * @param array<int, float> $weights Parsed weights indexed by RA ID.
+ * @param array $ras RA records indexed by RA ID.
+ * @param array $weights Parsed weights indexed by RA ID.
  * @return array<int, stdClass> RA records with preview weights applied.
  */
 function local_evalfp_apply_ra_weight_preview(array $ras, array $weights): array {
@@ -349,9 +349,9 @@ function local_evalfp_apply_ra_weight_preview(array $ras, array $weights): array
 /**
  * Parses submitted assessment criterion weights grouped by learning outcome.
  *
- * @param array<int, stdClass> $ras RA records indexed by RA ID.
- * @param array<int, array<int, stdClass>> $cesbyra CE records grouped by RA ID.
- * @param array<string, mixed> $submitted Submitted form data.
+ * @param array $ras RA records indexed by RA ID.
+ * @param array $cesbyra CE records grouped by RA ID.
+ * @param array $submitted Submitted form data.
  * @return array{weights: array<int, float>, errors: array<int, string>, sums: array<int, float>}
  *  Parsed weights, validation errors indexed by CE ID, and totals indexed by RA ID.
  */
@@ -393,8 +393,8 @@ function local_evalfp_parse_ce_weights(array $ras, array $cesbyra, array $submit
 /**
  * Saves assessment criterion weights.
  *
- * @param array<int, array<int, stdClass>> $cesbyra CE records grouped by RA ID.
- * @param array<int, float> $weights Parsed weights indexed by CE ID.
+ * @param array $cesbyra CE records grouped by RA ID.
+ * @param array $weights Parsed weights indexed by CE ID.
  * @return void
  */
 function local_evalfp_save_ce_weights(array $cesbyra, array $weights): void {
@@ -413,8 +413,8 @@ function local_evalfp_save_ce_weights(array $cesbyra, array $weights): void {
 /**
  * Applies submitted CE weights to records for preview.
  *
- * @param array<int, array<int, stdClass>> $cesbyra CE records grouped by RA ID.
- * @param array<int, float> $weights Parsed weights indexed by CE ID.
+ * @param array $cesbyra CE records grouped by RA ID.
+ * @param array $weights Parsed weights indexed by CE ID.
  * @return array<int, array<int, stdClass>> CE records with preview weights applied.
  */
 function local_evalfp_apply_ce_weight_preview(array $cesbyra, array $weights): array {
@@ -433,9 +433,9 @@ function local_evalfp_apply_ce_weight_preview(array $cesbyra, array $weights): a
  * Renders the assessment criterion weights form.
  *
  * @param int $courseid Course ID.
- * @param array<int, stdClass> $ras RA records indexed by RA ID.
- * @param array<int, array<int, stdClass>> $cesbyra CE records grouped by RA ID.
- * @param array<int, string> $errors Validation errors indexed by CE ID.
+ * @param array $ras RA records indexed by RA ID.
+ * @param array $cesbyra CE records grouped by RA ID.
+ * @param array $errors Validation errors indexed by CE ID.
  * @return string Rendered form HTML.
  */
 function local_evalfp_render_ce_weights_form(int $courseid, array $ras, array $cesbyra, array $errors = []): string {

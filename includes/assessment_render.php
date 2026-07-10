@@ -123,7 +123,7 @@ function local_evalfp_render_assessment_summary_table(
  * @param stdClass $course Course record.
  * @param stdClass $user User record.
  * @param int $userid User ID.
- * @param array<string, mixed> $vm Prepared individual report view model.
+ * @param array $vm Prepared individual report view model.
  * @return string Rendered individual report HTML.
  */
 function local_evalfp_render_individual_assessment_report_from_vm(

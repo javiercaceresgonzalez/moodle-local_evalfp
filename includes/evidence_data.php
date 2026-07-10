@@ -182,7 +182,7 @@ function local_evalfp_get_course_evidences(int $courseid): array {
 
         $gi->label = $label;
         $gi->url = $url;
-        $gi->iconhtml = html_writer::div($iconhtml, 'me-1 d-flex align-items-center flex-shrink-0');
+        $gi->iconhtml = html_writer::div($iconhtml, 'mr-1 d-flex align-items-center flex-shrink-0');
         $gi->cmid = $cmid;
         $gi->deadline = $deadline;
         $gi->typelabel = $typelabel;

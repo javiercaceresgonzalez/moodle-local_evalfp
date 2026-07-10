@@ -129,7 +129,7 @@ function local_evalfp_ra_ce_import_read_ods(string $filepath): array {
  * Returned data contains importable items plus validation warnings/errors, but
  * no database changes are performed at this stage.
  *
- * @param array<int, array<int, mixed>> $rows Rows read from the ODS worksheet.
+ * @param array $rows Rows read from the ODS worksheet.
  * @return array{items: array<int, array<string, mixed>>, ras: array<string, array<string, mixed>>,
  *  ces: array<string, array<string, mixed>>, errors: array<int, string>, warnings: array<int, string>}
  */
@@ -302,7 +302,7 @@ function local_evalfp_ra_ce_import_parse_rows(array $rows): array {
  * Validates parsed RA/CE import data against the course.
  *
  * @param int $courseid Course ID.
- * @param array<string, mixed> $parsed Parsed import data.
+ * @param array $parsed Parsed import data.
  * @param string $mode Import mode.
  * @return array<string, mixed> Parsed import data with course-level validation messages.
  */
@@ -373,7 +373,7 @@ function local_evalfp_ra_ce_import_parse_ods_file(int $courseid, string $filepat
  * inserting the reviewed data. Merge mode updates by code or creates records.
  *
  * @param int $courseid Course ID.
- * @param array<string, mixed> $parsed Validated import data.
+ * @param array $parsed Validated import data.
  * @param string $mode Import mode.
  * @return array<string, int> Import counters.
  */
@@ -479,7 +479,7 @@ function local_evalfp_ra_ce_import_apply(int $courseid, array $parsed, string $m
  * Stores RA/CE import preview data in the user session.
  *
  * @param int $courseid Course ID.
- * @param array<string, mixed> $parsed Parsed and validated import data.
+ * @param array $parsed Parsed and validated import data.
  * @param string $mode Import mode.
  * @return string Preview token.
  */
@@ -532,7 +532,7 @@ function local_evalfp_ra_ce_import_clear_preview(string $token): void {
 /**
  * Renders RA/CE import preview results.
  *
- * @param array<string, mixed> $parsed Parsed import data.
+ * @param array $parsed Parsed import data.
  * @return string Rendered preview HTML.
  */
 function local_evalfp_ra_ce_import_render_preview(array $parsed): string {

@@ -71,9 +71,9 @@ class ce extends \moodleform {
     /**
      * Validates unique CE code within the parent RA.
      *
-     * @param array<string, mixed> $data Submitted data.
-     * @param array<string, mixed> $files Submitted files.
-     * @return array<string, string> Validation errors indexed by form element name.
+     * @param array $data Submitted data.
+     * @param array $files Submitted files.
+     * @return array Validation errors indexed by form element name.
      */
     public function validation($data, $files) {
         global $DB;

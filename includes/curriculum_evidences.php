@@ -84,7 +84,7 @@ function local_evalfp_get_curriculum_evidence_matrix_data(int $courseid): array 
  * Saves the curriculum evidence matrix.
  *
  * @param int $courseid Course ID.
- * @param array<string, mixed> $evidencematrix Matrix data returned by local_evalfp_get_curriculum_evidence_matrix_data().
+ * @param array $evidencematrix Matrix data returned by local_evalfp_get_curriculum_evidence_matrix_data().
  * @return void
  */
 function local_evalfp_save_curriculum_evidence_matrix(int $courseid, array $evidencematrix): void {
@@ -167,7 +167,7 @@ function local_evalfp_save_curriculum_evidence_matrix(int $courseid, array $evid
  * Renders the curriculum evidence matrix.
  *
  * @param int $courseid Course ID.
- * @param array<string, mixed> $evidencematrix Matrix data returned by local_evalfp_get_curriculum_evidence_matrix_data().
+ * @param array $evidencematrix Matrix data returned by local_evalfp_get_curriculum_evidence_matrix_data().
  * @return string Rendered matrix HTML.
  */
 function local_evalfp_render_curriculum_evidence_matrix(int $courseid, array $evidencematrix): string {

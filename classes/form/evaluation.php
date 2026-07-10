@@ -86,9 +86,9 @@ class evaluation extends \moodleform {
     /**
      * Validates dates, unique code and unique final/extraordinary evaluation.
      *
-     * @param array<string, mixed> $data Submitted data.
-     * @param array<string, mixed> $files Submitted files.
-     * @return array<string, string> Validation errors indexed by form element name.
+     * @param array $data Submitted data.
+     * @param array $files Submitted files.
+     * @return array Validation errors indexed by form element name.
      */
     public function validation($data, $files) {
         global $DB;
