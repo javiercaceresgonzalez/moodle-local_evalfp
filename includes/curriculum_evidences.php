@@ -87,7 +87,7 @@ function local_evalfp_get_curriculum_evidence_matrix_data(int $courseid): array 
  * @param array $evidencematrix Matrix data returned by local_evalfp_get_curriculum_evidence_matrix_data().
  * @return void
  */
-function local_evalfp_save_curriculum_evidence_matrix(int $courseid, array $evidencematrix): void {
+function local_evalfp_save_curriculum_evidence_matrix(array $evidencematrix): void {
     global $DB;
 
     require_sesskey();

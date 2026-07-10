@@ -54,7 +54,7 @@ $evidences = $evidencematrix['evidences'];
 // Save submitted matrix changes.
 if (optional_param('savecurriculumevidences', 0, PARAM_BOOL)) {
     require_sesskey();
-    local_evalfp_save_curriculum_evidence_matrix($courseid, $evidencematrix);
+    local_evalfp_save_curriculum_evidence_matrix($evidencematrix);
     \core\notification::success(get_string('success_changes_saved', 'local_evalfp'));
     redirect(new moodle_url('/local/evalfp/course/curriculum/evidences.php', ['courseid' => $courseid]));
 }

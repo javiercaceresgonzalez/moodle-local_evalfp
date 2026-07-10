@@ -73,6 +73,7 @@ function local_evalfp_get_coursemodule_curriculum(int $courseid, int $cmid): arr
  *
  * @param int $courseid Course ID.
  * @param int $cmid Course module ID.
+ * @param bool $expanded Whether the block should be expanded by default.
  * @return string
  */
 function local_evalfp_render_coursemodule_curriculum_block(int $courseid, int $cmid, bool $expanded = false): string {

@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Added a GitHub Actions workflow for Moodle Plugin CI.
+
+### Changed
+
+- Tidied PHPDoc parameter annotations for Moodle tooling compatibility.
+- Removed small unused parameter and variable warnings reported by PHP Mess Detector.
+- Normalised small style details in CSS, Bootstrap spacing classes and Spanish language strings.
+
 ## 1.0.2 - 2026-07-09
 
 ### Changed

@@ -68,6 +68,8 @@ function local_evalfp_extend_navigation_course($navigation, $course, $context) {
 function local_evalfp_coursemodule_standard_elements($formwrapper, MoodleQuickForm $mform) {
     global $COURSE;
 
+    unset($formwrapper);
+
     local_evalfp_add_coursemodule_curriculum_elements((int)$COURSE->id, $mform);
 }
 

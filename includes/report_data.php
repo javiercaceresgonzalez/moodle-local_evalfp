@@ -96,7 +96,7 @@ function local_evalfp_get_report_evidences_by_ce(int $courseid): array {
 
     foreach ($byce as $ceid => $gradeitemids) {
         $orderedgradeitemids = [];
-        foreach ($evidences as $gradeitemid => $unused) {
+        foreach (array_keys($evidences) as $gradeitemid) {
             if (isset($gradeitemids[$gradeitemid])) {
                 $orderedgradeitemids[] = $gradeitemid;
             }
