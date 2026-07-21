@@ -68,7 +68,13 @@ function local_evalfp_extend_navigation_course($navigation, $course, $context) {
 function local_evalfp_coursemodule_standard_elements($formwrapper, MoodleQuickForm $mform) {
     global $COURSE;
 
-    unset($formwrapper);
+    if (!preg_match('/^mod_([^_]+)_mod_form$/', get_class($formwrapper), $matches)) {
+        return;
+    }
+
+    if (!local_evalfp_is_supported_coursemodule_type($matches[1])) {
+        return;
+    }
 
     local_evalfp_add_coursemodule_curriculum_elements((int)$COURSE->id, $mform);
 }
@@ -85,8 +91,14 @@ function local_evalfp_coursemodule_edit_post_actions($data, $course) {
         return $data;
     }
 
-    local_evalfp_save_coursemodule_evaluation((int)$course->id, (int)$data->coursemodule);
-    local_evalfp_save_coursemodule_curriculum_links((int)$course->id, (int)$data->coursemodule);
+    $courseid = (int)$course->id;
+    $cmid = (int)$data->coursemodule;
+    if (!local_evalfp_is_supported_coursemodule($courseid, $cmid)) {
+        return $data;
+    }
+
+    local_evalfp_save_coursemodule_evaluation($courseid, $cmid);
+    local_evalfp_save_coursemodule_curriculum_links($courseid, $cmid);
 
     return $data;
 }

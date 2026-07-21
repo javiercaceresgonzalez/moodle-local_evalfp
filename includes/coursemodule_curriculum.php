@@ -23,6 +23,53 @@
  */
 
 /**
+ * Returns whether a Moodle module archetype can carry EvalFP curriculum links.
+ *
+ * @param int $archetype Module archetype.
+ * @return bool
+ */
+function local_evalfp_is_supported_coursemodule_archetype(int $archetype): bool {
+    return $archetype !== MOD_ARCHETYPE_RESOURCE;
+}
+
+/**
+ * Returns whether a Moodle module can carry EvalFP curriculum links.
+ *
+ * @param string $modname Moodle module name.
+ * @return bool
+ */
+function local_evalfp_is_supported_coursemodule_type(string $modname): bool {
+    $archetype = plugin_supports('mod', $modname, FEATURE_MOD_ARCHETYPE, MOD_ARCHETYPE_OTHER);
+
+    return local_evalfp_is_supported_coursemodule_archetype((int)$archetype);
+}
+
+/**
+ * Returns whether an existing course module can carry EvalFP curriculum links.
+ *
+ * @param int $courseid Course ID.
+ * @param int $cmid Course module ID.
+ * @return bool
+ */
+function local_evalfp_is_supported_coursemodule(int $courseid, int $cmid): bool {
+    global $DB;
+
+    $sql = "
+        SELECT m.name
+          FROM {course_modules} cm
+          JOIN {modules} m ON m.id = cm.module
+         WHERE cm.course = :courseid
+           AND cm.id = :cmid
+    ";
+    $modname = $DB->get_field_sql($sql, ['courseid' => $courseid, 'cmid' => $cmid]);
+    if ($modname === false) {
+        return false;
+    }
+
+    return local_evalfp_is_supported_coursemodule_type((string)$modname);
+}
+
+/**
  * Returns curriculum information linked to a course module.
  *
  * @param int $courseid Course ID.

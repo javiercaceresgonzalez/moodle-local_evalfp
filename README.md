@@ -1,22 +1,22 @@
 # EvalFP
 
-**EvalFP** is a Moodle local plugin for **Formación Profesional (FP)**, Spain's vocational education and training system.
+EvalFP is a Moodle local plugin for Formación Profesional (FP), Spain's vocational education and training system.
 
 It adds a curriculum-based assessment layer to Moodle courses, connecting Moodle gradebook items with learning outcomes, assessment criteria, evaluation periods and evidence reports.
 
-The plugin is designed for Spanish vocational education workflows where teachers need to assess by **Resultados de Aprendizaje (RA)** and **Criterios de Evaluación (CE)** while keeping Moodle as the official source of activities, grade items and grades.
+The plugin is designed for Spanish vocational education workflows where teachers assess using Resultados de Aprendizaje (RA) and Criterios de Evaluación (CE), while keeping Moodle as the source of activities, grade items and grades.
 
 In the English interface, EvalFP uses:
 
-- **LO**: learning outcome, equivalent to RA in Spanish.
-- **AC**: assessment criterion, equivalent to CE in Spanish.
-- **Evidence**: a Moodle gradebook item linked to one or more assessment criteria.
+- `LO`: learning outcome, equivalent to RA in Spanish.
+- `AC`: assessment criterion, equivalent to CE in Spanish.
+- `Evidence`: a Moodle gradebook item linked to one or more assessment criteria.
 
 ## Purpose
 
 Moodle already provides a powerful gradebook. Teachers can grade assignments, quizzes, manual items, categories and calculated items with a lot of flexibility.
 
-**EvalFP does not replace that gradebook**. It gives Moodle grades the additional curriculum meaning normally required in Formación Profesional based on:
+EvalFP does not replace that gradebook. It gives Moodle grades additional curriculum context based on:
 
 - which learning outcomes are defined in the course.
 - which assessment criteria belong to each learning outcome.
@@ -32,7 +32,7 @@ Moodle gradebook -> activities, grade items and grades.
 EvalFP -> FP curriculum structure, evidence links, weights, periods and reports.
 ```
 
-This helps teachers avoid parallel spreadsheets and/or external tools while keeping the assessment process transparent within Moodle.
+This can help teachers reduce parallel spreadsheets or external tools while keeping the assessment process inside Moodle.
 
 ![Detailed student assessment report by learning outcome and assessment criterion](doc/images/assessment-individual.png)
 
@@ -44,8 +44,9 @@ This helps teachers avoid parallel spreadsheets and/or external tools while keep
 * Configure assessment criterion weights within every learning outcome.
 * Define partial, final and extraordinary evaluation periods.
 * Link Moodle gradebook items to evaluation periods and assessment criteria.
+* Include EvalFP course configuration and evidence links in Moodle backup and restore.
 * Review an assessment summary by learning outcome.
-* Open individual user reports with the structure LO > AC > evidence.
+* Open individual user reports with the structure `LO > AC > evidence`.
 * Review evidence grouped by learning outcome, assessment criterion or evaluation period.
 * Optionally display linked RA/CE information inside Moodle activity pages.
 
@@ -63,19 +64,19 @@ This helps teachers avoid parallel spreadsheets and/or external tools while keep
 
 ## Languages
 
-EvalFP is primarily designed for use in **Spanish**, as its natural context is Formación Profesional in Spain.
+EvalFP is primarily designed for use in Spanish, as its natural context is Formación Profesional in Spain.
 
-The plugin includes an **English** translation to make the project easier to understand, review and reuse by the wider Moodle community.
+The plugin also includes an English translation to support review and reuse by the wider Moodle community.
 
-Additional languages can be added following Moodle's standard language file system by creating the corresponding language folder and strings inside the plugin's `lang` directory.
+Additional languages can be added using Moodle's standard language file system.
 
 ## What EvalFP does not do
 
-EvalFP does **not create a parallel grading system** and does **not modify how Moodle activities are graded**.
+EvalFP does not create a parallel grading system and does not modify how Moodle activities are graded.
 
-It reads Moodle gradebook data and interprets it through the configured FP curriculum structure. **Moodle remains the source of grades**, grade items, activity grading settings and gradebook scales.
+It reads Moodle gradebook data and interprets it through the configured FP curriculum structure. Moodle remains the source of grades, grade items, activity grading settings and gradebook scales.
 
-EvalFP is also **not a substitute for the official teaching plan** of a department. The plugin supports curriculum-based assessment workflows, but each school, department and teaching team remains responsible for applying the regulations and criteria approved in their official documentation.
+EvalFP is also not a substitute for the official teaching plan of a department. Each school, department and teaching team remains responsible for applying its approved regulations and assessment criteria.
 
 ## Requirements
 
@@ -144,19 +145,18 @@ moodle/grade:viewall
 
 ![Overview of student achievement by learning outcome](doc/images/assessment-general.png)
 
-
 ## Course navigation
 
-EvalFP is accessed from the course navigation, under the course **More** menu.
+EvalFP is accessed from the course navigation, under the course `More` menu.
 
 ![EvalFP main interface](doc/images/evalfp-main.png)
 
 The plugin is organised into four main areas:
 
-* **Assessment**: assessment summary and individual user reports.
-* **Curriculum configuration**: learning outcomes, assessment criteria, weights, evaluation periods and evidence links.
-* **Reports**: read-only evidence reports grouped by learning outcome, assessment criterion or evaluation period.
-* **Settings**: course-level options, currently focused on activity display settings.
+* Assessment: assessment summary and individual user reports.
+* Curriculum configuration: learning outcomes, assessment criteria, weights, evaluation periods and evidence links.
+* Reports: read-only evidence reports grouped by learning outcome, assessment criterion or evaluation period.
+* Settings: course-level display options.
 
 ## Basic use
 
@@ -168,16 +168,25 @@ After that, evaluation periods are created and Moodle gradebook items are linked
 
 Once the configuration is complete, teachers can review course-level summaries, individual user reports and evidence reports.
 
+## Backup and restore
+
+EvalFP supports Moodle backup and restore for course-level curriculum configuration, course settings, evaluation periods and evidence links.
+
+Activity-level evidence links are included when the corresponding Moodle activity and grade item are restored.
+
+After complex restores, teachers should review the evidence matrix to confirm that Moodle restored the expected activities and grade items.
+
 ## Activity information
 
 EvalFP can optionally display linked curriculum information inside supported Moodle activity pages.
 
 When enabled, the activity page displays the linked learning outcomes and assessment criteria as read-only curriculum context.
 
+EvalFP course-module controls are shown only for Moodle activity modules. Resource modules are intentionally excluded because they are not assessment evidence by themselves.
+
 ![EvalFP learning outcomes and assessment criteria shown on a Moodle activity page](doc/images/activity-info.png)
 
 This does not change grading, does not modify the Moodle gradebook and does not allow editing evidence links from the activity view.
-
 
 ## Calculation model
 
@@ -207,39 +216,19 @@ These colours are only visual indicators. They do not change Moodle grades.
 
 ## Data and privacy
 
-EvalFP stores **course-level curriculum configuration** and links between Moodle gradebook items and the FP curriculum structure.
+EvalFP stores course-level curriculum configuration and links between Moodle gradebook items and the FP curriculum structure.
 
 This includes learning outcomes, assessment criteria, their weights, evaluation periods, evidence links and course-level display settings.
 
-The plugin does **not store independent user grades**. It reads grade information from **Moodle's gradebook**.
+The plugin does not store independent user grades. It reads grade information from Moodle's gradebook.
 
-Individual reports are generated from Moodle users and Moodle gradebook data **already present in the course**.
-
-## Current scope and future work
-
-This initial public release focuses on the core EvalFP workflow: defining the FP curriculum structure, linking Moodle gradebook items as evidence, configuring weights, creating evaluation periods and generating assessment reports.
-
-Some advanced features have not been included in this first version in order to keep the plugin focused, stable and easier to validate in real teaching contexts.
-
-Planned or potential future improvements include:
-
-- backup and restore support for EvalFP course configuration;
-- automatic review of evidence links after duplicating or importing activities;
-- improved filtering and navigation in large evidence matrices;
-- additional export options for reports;
-- extended documentation with practical examples;
-- further usability improvements based on teacher feedback.
-
-Backup and restore support is **not included yet**. After duplicating or importing Moodle activities, teachers should review the evaluation evidence matrix to confirm that evidence links are correctly configured.
-
-This roadmap keeps EvalFP open to improvement while preserving the main goal of the first release: providing a clear and useful curriculum-based assessment layer integrated into Moodle.
+Individual reports are generated from Moodle users and Moodle gradebook data already present in the course.
 
 ## License
 
 This plugin is licensed under the GNU General Public License v3 or later.
 
 See: [http://www.gnu.org/copyleft/gpl.html](http://www.gnu.org/copyleft/gpl.html)
-
 
 ## Author
 

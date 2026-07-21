@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.4 - 2026-07-21
+
+### Added
+
+- Added Moodle backup and restore support for EvalFP course configuration, settings, evaluation periods and evidence links.
+
+### Changed
+
+- Limited EvalFP course-module curriculum controls to Moodle activity modules, excluding resource modules.
+
 ## 1.0.3 - 2026-07-10
 
 ### Added
