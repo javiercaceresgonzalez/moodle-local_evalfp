@@ -1,4 +1,4 @@
-name: Moodle Plugin CI Compatibility
+name: Moodle Plugin CI Compatibility 5.2
 
 on:
   workflow_dispatch:
@@ -25,8 +25,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - moodle-branch: MOODLE_500_STABLE
-            php: "8.2"
+          - moodle-branch: MOODLE_502_STABLE
+            php: "8.3"
             database: pgsql
 
     steps:
